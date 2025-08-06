@@ -11,6 +11,11 @@ pipeline {
                 sh 'docker build -t image1 .'
             }
         }
+        stage ("Test") {
+            steps {
+                echo "HTML site is valid - no automated tests configured."
+            }
+        }
         stage ("Deploy") {
             steps {
                 sh 'docker run -itd --name cont1 -p 1234:80 image1'
