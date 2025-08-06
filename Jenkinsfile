@@ -18,7 +18,7 @@ pipeline {
         }
         stage ("Deploy") {
             steps {
-                sh 'docker stop con1 || true'
+                sh 'docker stop cont1 || true'
                 sh 'docker rm cont1 || true'
                 sh 'docker run -itd --name cont1 -p 1234:80 image1'
             }
